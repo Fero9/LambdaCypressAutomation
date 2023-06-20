@@ -15,10 +15,15 @@ it('Gets the value of the selected radio button', () => {
 })
 
 it('Tests the disabled checkboxes', () => {
+    cy.get('[type="radio"]').check('Checkbox1').should('be.checked')
+    cy.get('[type="radio"]').check('Checkbox2').should('be.checked')
+    cy.get(':nth-child(4) > .text-size-16 > .mr-10').should('have.value','Checkbox3').and('be.disabled')
+    /*
     cy.contains('Checkbox 1').click()
     cy.contains('Checkbox 1').should('be.checked')
     cy.contains('Checkbox 2').click().should('be.enabled')
     cy.contains('Disabled Checkbox').should('be.disabled')
+    */
 })
 
 it('Tests the gender and age', () => {
