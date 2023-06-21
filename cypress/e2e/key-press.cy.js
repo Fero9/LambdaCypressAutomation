@@ -5,6 +5,8 @@ beforeEach(() => {
 
   describe('All of the Key Press tests', () => {
     it('Tests which key has been pressed', () => {
-        cy.get('#my_field')
+      cy.get('#my_field').type('Q')
+      //This should be data driven
+      cy.get('#result').should('contain', 'Q')
     })
   })
