@@ -6,5 +6,6 @@ beforeEach(() => {
   describe('Download file test', () => {
     it('Downloads a file', () => {
         cy.get('.btn').click()
+        cy.readFile('cypress/downloads/LambdaTest.pdf')
     })
   })
